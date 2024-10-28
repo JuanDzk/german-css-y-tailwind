@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        .dropdown-content {
+            display: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <header class="m-3 border-2 rounded-xl">
+        <button id="toggleSidebar"
+            class=" px-4 py-2 bg-blue-500 text-white rounded-full left-6 bottom-48 m-3">☰</button>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar"
+        class="fixed inset-y-0 left-0 bg-gray-800 text-white w-64 transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="p-4">
+            <div class="flex justify-between">
+                <h2 class="text-xl font-semibold">Menú</h2>
+                <button id="closeSidebar">✖</button>
+            </div>
+
+            <nav class="mt-4">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-700">Opción 1</a>
+                <a href="procesar.html" class="block px-4 py-2 hover:bg-gray-700">Salir</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Botón flotante para abrir el formulario lateral -->
+    <button id="openModal"
+        class="fixed bottom-9 right-5 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none"
+        aria-label="Abrir formulario"> 🪠
+    </button>
+
+    <!-- Menú lateral con formulario -->
+    
+    <div id="modal" class="fixed inset-0 flex items-center justify-center hidden modal">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-700">Crear o Editar</h2>
+        <form id="dataForm" class="space-y-6">
+            <input type="hidden" id="id" name="id">
+            <div>
+                <label for="nombre" class="block text-lg font-medium">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div>
+                <label for="email" class="block text-lg font-medium">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="E-mail" required class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div>
+                <label for="telefono" class="block text-lg font-medium">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div>
+                <label for="contrasenia" class="block text-lg font-medium">Contraseña</label>
+                <input type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" required class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <button type="submit" class="block w-full py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 flex items-center justify-center" aria-label="Guardar usuario">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11l3 3v13a2 2 0 0 1-2 2zM14 2H8a2 2 0 0 0-2 2v2h10V4a2 2 0 0 0-2-2z" />
+                </svg>
+                Guardar Usuario
+            </button>
+        </form>
+        <button id="closeSidebar" class="mt-6 block w-full py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 flex items-center justify-center" aria-label="Cerrar formulario">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.36 6.64a9 9 0 1 0 0 10.72 9 9 0 0 0 0-10.72zm-1.42 9.42l-1.41 1.41L12 12.41l-4.93 4.93-1.41-1.41L10.59 12 5.66 7.07l1.41-1.41L13.41 12l4.93 4.93 1.41-1.41L14.41 12l4.93-4.93z" />
+            </svg>
+            Cerrar
+        </button>
+    </div>
+
+    
+
+
+    <div class="content">
+        <!-- Contenido de la página -->
+    </div>
+    <footer class="bg-gray-800 text-white p-4">
+        Este es el footer
+    </footer>
+
+
+
+
+
+
+</body>
+<script src="js/script.js"></script>
+<script src="js/user.js"></script>
+
+
+
+
+
+</html>

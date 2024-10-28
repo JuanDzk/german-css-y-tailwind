@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modal con Tailwind CSS</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-gray-100 text-gray-800 flex items-center justify-center h-screen">
+
+        <!-- Botón para abrir el modal -->
+        <button id="openModal" class="px-4 py-2 bg-indigo-600 text-white font-bold rounded-lg"> Abrir Modal</button>
+
+        <!-- Modal -->
+        <div id="modal" class="fixed inset-0 flex items-center justify-center hidden modal">
+            <div class="bg-white rounded-lg shadow-lg p-6 w-96 relative block">
+                <h2 class="text-lg font-semibold mb-4">Información Usuario</h2>
+                <div class="flex">
+                    <form action="crear.html" class="block">
+                        <button type="submit" class="px-4 py-2 bg-blue-500 rounded-lg">Crear Usuario</button>
+                    </form>
+                    <button id="closeModal" class="px-4 py-2 bg-gray-300 rounded-lg ml-10">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+        <script>
+            // Script para abrir y cerrar el modal
+            const openModal = document.getElementById('openModal');
+            const closeModal = document.getElementById('closeModal');
+            const modal = document.getElementById('modal');
+
+            openModal.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+
+            // Cerrar el modal al hacer clic fuera de él
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        </script>
+
+    </html>
+</body>
+
+</html>
